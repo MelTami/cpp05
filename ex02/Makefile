@@ -6,13 +6,17 @@
 #    By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:35:44 by mvavasso          #+#    #+#              #
-#    Updated: 2024/05/10 16:36:32 by mvavasso         ###   ########.fr        #
+#    Updated: 2024/05/11 18:19:35 by mvavasso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= Bureaucrat
 SRCS	= main.cpp\
- 		Bureaucrat.cpp
+ 		Bureaucrat.cpp\
+		AForm.cpp\
+		PresidentialPardonForm.cpp\
+		RobotomyRequestForm.cpp\
+		ShrubberyCreationForm.cpp
 OBJS		= $(addprefix objects/, $(notdir $(SRCS:.cpp=.o)))
 FLAGS		= -Wall -Wextra -Werror -g -std=c++98
 CC			= c++

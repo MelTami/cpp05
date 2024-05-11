@@ -6,7 +6,52 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:35:39 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/10 16:35:40 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 18:17:22 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
+#include <iostream>
+#include <string>
+#include "AForm.hpp"
+
+class Bureaucrat
+{
+private:
+    std::string const   _name;
+    int                 _grade;
+public:
+    Bureaucrat(); //Constructor
+    Bureaucrat(const Bureaucrat &src); // Copy constructor
+	Bureaucrat(std::string const &name, int grade);
+    ~Bureaucrat(); //Desctructor
+    Bureaucrat	&operator=(const Bureaucrat &src); //Assignment operator
+
+    // Getters
+	std::string const	&getName() const;
+	int					getGrade() const;
+
+	// Methods
+	void				incrementGrade();
+	void				decrementGrade();
+    void				signForm(class AForm &form);
+    void                executeForm(AForm const & form);
+
+	// Exceptions
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw();
+	};
+
+};
+
+std::ostream	&operator<<(std::ostream &out, const Bureaucrat &src);
+
+#endif
