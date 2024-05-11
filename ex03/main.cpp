@@ -6,68 +6,53 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:35:42 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 17:46:34 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 18:42:15 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main()
 {
-	Bureaucrat	pyra("Pyra", 2);
-	Bureaucrat	mythra("Mythra", 149);
+	srand(time(NULL));
 
-	std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 2"
-	std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 149"
-    
-	try
-	{
-		pyra.decrementGrade();
-		std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 1"
-		pyra.decrementGrade();
-		std::cout << pyra << std::endl; // Should not be printed
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl; // print "Grade too high"
-	}
-
-	std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 1"
+	Bureaucrat	ness("Ness", 2);
+	Bureaucrat	hero("Hero", 150);
+	Bureaucrat	rob("Rob", 50);
+	PresidentialPardonForm	presidentialPardonForm("Link");
+	PresidentialPardonForm	copy(presidentialPardonForm);
+	PresidentialPardonForm	copy2 = presidentialPardonForm;
+	RobotomyRequestForm		robotomyRequestForm("Young Link");
+	ShrubberyCreationForm	shrubberyCreationForm("Toon Link");
 
 	try
 	{
-		mythra.incrementGrade();
-		std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 150"
-		mythra.incrementGrade();
-		std::cout << mythra << std::endl; // Should not be printed
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl; // print "Grade too low"
-	}
-
-	std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 150"
-
-	try
-	{
-		Bureaucrat	steve("Steve", 0);
-		std::cout << steve << std::endl; // Should not be printed
+		presidentialPardonForm.execute(ness);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n'; // print "Grade too high"
+		std::cerr << e.what() << '\n';
 	}
-
+	ness.signForm(presidentialPardonForm);
+	ness.executeForm(presidentialPardonForm);
+	hero.signForm(robotomyRequestForm);
 	try
 	{
-		Bureaucrat	steve("Steve", 151);
-		std::cout << steve << std::endl; // Should not be printed
+		robotomyRequestForm.beSigned(hero);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n'; // print "Grade too low"
+		std::cerr << e.what() << '\n';
 	}
-
-	return (0);
+	rob.signForm(robotomyRequestForm);
+	rob.executeForm(robotomyRequestForm);
+	ness.executeForm(robotomyRequestForm);
+	rob.signForm(shrubberyCreationForm);
+	rob.executeForm(shrubberyCreationForm);
 }
