@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:35:42 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 17:46:34 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 22:14:59 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,59 +15,37 @@
 
 int	main()
 {
-	Bureaucrat	pyra("Pyra", 2);
-	Bureaucrat	mythra("Mythra", 149);
 
-	std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 2"
-	std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 149"
-    
-	try
-	{
-		pyra.decrementGrade();
-		std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 1"
-		pyra.decrementGrade();
-		std::cout << pyra << std::endl; // Should not be printed
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl; // print "Grade too high"
+	try {
+            Bureaucrat    Bcrat3("Bureaucrat", 1);
+            std::cout << Bcrat3 << std::endl;
+			
+            for (int i = 0; i < 150; i++)
+            {
+                std::cout << Bcrat3.getName() << " -> Increment grade" << std::endl;
+                Bcrat3.incrementGrade();
+                std::cout << Bcrat3 << std::endl;
+            }
+    }
+	catch(std::exception & e) {
+		std::cout << "Grade out of range : " << e.what() << std::endl;
 	}
 
-	std::cout << pyra << std::endl; // print "Pyra, bureaucrat grade 1"
-
-	try
-	{
-		mythra.incrementGrade();
-		std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 150"
-		mythra.incrementGrade();
-		std::cout << mythra << std::endl; // Should not be printed
+	try{
+		Bureaucrat    Bcrat2("Bureaucrat", 150);
+    	std::cout << Bcrat2 << std::endl;
+			
+		for (int j = 0; j < 150; j++)
+            {
+                std::cout << Bcrat2.getName() << " -> Decrement grade" << std::endl;
+                Bcrat2.decrementGrade();
+                std::cout << Bcrat2 << std::endl;
+            }
 	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what() << std::endl; // print "Grade too low"
+	catch(std::exception & e){
+		std::cout << "Grade out of range : " << e.what() << std::endl;
 	}
-
-	std::cout << mythra << std::endl; // print "Mythra, bureaucrat grade 150"
-
-	try
-	{
-		Bureaucrat	steve("Steve", 0);
-		std::cout << steve << std::endl; // Should not be printed
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n'; // print "Grade too high"
-	}
-
-	try
-	{
-		Bureaucrat	steve("Steve", 151);
-		std::cout << steve << std::endl; // Should not be printed
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n'; // print "Grade too low"
-	}
-
+		
+	
 	return (0);
 }
