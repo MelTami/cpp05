@@ -6,7 +6,7 @@
 #    By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/10 16:35:44 by mvavasso          #+#    #+#              #
-#    Updated: 2024/05/11 18:19:35 by mvavasso         ###   ########.fr        #
+#    Updated: 2024/05/11 21:37:35 by mvavasso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ run: all
 
 clean: 
 		@rm -rf objects
+		@rm *_shrubbery
 
 fclean: clean
 		@rm -f $(NAME)

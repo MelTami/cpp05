@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:09:18 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 18:36:09 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 21:46:33 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define AFORM_HPP
 
 #include <iostream>
-#include <string>
+#include <cstdlib>
+#include <ctime> 
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;

@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:17:38 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 18:40:25 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 21:43:25 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ class RobotomyRequestForm: public AForm
 private:
     std::string	_target;
 public:
-    RobotomyRequestForm(); // Default constructor
+    RobotomyRequestForm(std::string target); // Default constructor
 	RobotomyRequestForm(const RobotomyRequestForm &src); // Copy constructor
-	RobotomyRequestForm(std::string const &target);
 	~RobotomyRequestForm(); // Destructor
 	RobotomyRequestForm	&operator=(const RobotomyRequestForm &src); // Assignment operator
 
