@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:17:40 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 21:47:01 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 22:46:09 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     file.open(filename.c_str());
     if (file.is_open())
     {
+        file << "                                     Done in ASCII"<< std::endl;
         file << "              _{\\ _{\\{\\/}/}/}__                           _{\\ _{\\{\\/}/}/}__" << std::endl;
         file << "             {/{/\\}{/{/\\}(\\}{/\\} _                       {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;
         file << "            {/{/\\}{/{/\\}(_)\\}{/{/\\}  _                  {/{/\\}{/{/\\}(_)\\}{/{/\\}  _" << std::endl;
