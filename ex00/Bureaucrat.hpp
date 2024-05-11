@@ -6,7 +6,11 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:35:39 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/10 16:35:40 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 19:32:52 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
+#endif

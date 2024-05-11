@@ -6,7 +6,8 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:35:30 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/10 16:35:32 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/10 19:49:44 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
