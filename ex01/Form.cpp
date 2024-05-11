@@ -6,7 +6,7 @@
 /*   By: mvavasso <mvavasso@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:54:16 by mvavasso          #+#    #+#             */
-/*   Updated: 2024/05/11 17:59:39 by mvavasso         ###   ########.fr       */
+/*   Updated: 2024/05/11 21:32:23 by mvavasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ Form::Form(const Form &src): _name(src._name), _grade_to_sign(src._grade_to_sign
 Form::Form(std::string const &name, int grade_to_sign, int grade_to_execute): _name(name), _is_signed(false), _grade_to_sign(grade_to_sign), _grade_to_execute(grade_to_execute)
 {
 	if (grade_to_sign < 1 || grade_to_execute < 1)
-		throw Form::GradeTooHighException();
-	else if (grade_to_sign > 150 || grade_to_execute > 150)
 		throw Form::GradeTooLowException();
+	else if (grade_to_sign > 150 || grade_to_execute > 150)
+		throw Form::GradeTooHighException();
 }
 
 Form::~Form()
